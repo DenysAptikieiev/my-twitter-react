@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './app-header.css';
 
-const AppHeader = () => {
-    return (
-        <div className="app-header d-flex">
-            <h1>Denys Aptikieiev</h1>
-            <h2>5 Записей, из них понравилось 0</h2>
-        </div>
-    )
+export default class AppHeader extends Component {
+    render() {
+    const {liked, allPosts} = this.props;
+
+        return (
+            <div className="app-header d-flex">
+                <h1>Denys Aptikieiev</h1>
+            <h2>{allPosts} Записей, из них понравилось {liked}</h2>
+            </div>
+        )
+    }
 }
 
-export default AppHeader;
